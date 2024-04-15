@@ -1,4 +1,5 @@
 import 'package:bmw_car/utils/text_utlis.dart';
+import 'package:bmw_car/widgets/app_bar_widget.dart';
 
 import 'package:flutter/material.dart';
 
@@ -8,17 +9,7 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
-        surfaceTintColor: Colors.transparent,
-        leading: const Icon(Icons.sort),
-        title: SizedBox(
-          height: 70,
-          width: 70,
-          child: Image.asset("assets/logo.webp"),
-        ),
-      ),
+      appBar:const  AppBarWidget(),
       body: Container(
         height: double.infinity,
         width: double.infinity,
