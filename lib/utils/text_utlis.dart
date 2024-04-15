@@ -12,7 +12,7 @@ class TextUtil extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Text(text,
 
-      style: TextStyle(color:color?? Colors.black,fontSize:size?? 18,
+      style: TextStyle(color:color?? Colors.white,fontSize:size?? 18,
           fontWeight:weight==null?FontWeight.w500: FontWeight.w700,fontFamily: "Poppins"
       ),
       maxLines: 2,

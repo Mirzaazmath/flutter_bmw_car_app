@@ -1,3 +1,4 @@
+import 'package:bmw_car/utils/text_utlis.dart';
 import 'package:flutter/material.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,15 +18,28 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: Container(
+        height: double.infinity,
+        width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/front_car.jpeg"),fit: BoxFit.fill
           ),
         ),
-       child: Column(
-         children: [
+       child:  Padding(
+         padding:  const EdgeInsets.all(20),
+         child: Column(
+           children: [
+             const TextUtil(text: "Hello Dev_73arner!",size: 22,weight: true,),
+             const  SizedBox(height: 20,),
+             const   TextUtil(text: "8 Series Gran Coupe"),
+             const  Spacer(),
+             Row(
+               children: [
 
-         ],
+               ],
+             )
+           ],
+         ),
        ),
       ),
     );
