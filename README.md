@@ -11,7 +11,7 @@ A new Flutter project.
 <img src="https://github.com/Mirzaazmath/flutter_bmw_car_app/blob/main/assets/output/ScreenShot2.png" height="400">
 
 # Result
-<img src="https://github.com/Mirzaazmath/flutter_bmw_car_app/blob/main/assets/output/result.gif" height="400">
+<img src="https://github.com/Mirzaazmath/flutter_bmw_car_app/blob/main/assets/output/resul.gif" height="400">
 
 
 This project is a starting point for a Flutter application.
