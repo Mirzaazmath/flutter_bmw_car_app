@@ -16,7 +16,7 @@ class FeatureWidget extends StatelessWidget {
       ),
       const  SizedBox(height: 5,),
       TextUtil(text: title,weight: true,size: 24,),
-      TextUtil(text: subTitle,weight: true,color: Colors.grey,size: 11,),
+      TextUtil(text: subTitle.toUpperCase(),weight: true,color: Colors.grey,size: 11,),
 
     ],);
   }

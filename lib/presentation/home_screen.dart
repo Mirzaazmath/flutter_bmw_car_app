@@ -1,5 +1,7 @@
 import 'package:bmw_car/utils/text_utlis.dart';
+import 'package:bmw_car/widgets/featutre_widget.dart';
 import 'package:flutter/material.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -22,25 +24,85 @@ class HomeScreen extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/front_car.jpeg"),fit: BoxFit.fill
+              image: AssetImage("assets/front_car.jpeg"), fit: BoxFit.fill),
+        ),
+        child: const Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            children: [
+
+              TextUtil(
+                text: "Hello Dev_73arner!",
+                size: 22,
+                weight: true,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextUtil(text: "8 Series Gran Coupe"),
+              Spacer(),
+              Spacer(),
+              Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  FeatureWidget(
+                      title: "24*",
+                      icon: Icons.device_thermostat,
+                      subTitle: "Temperature"),
+                  FeatureWidget(
+                      title: "100",
+                      icon: Icons.account_tree,
+                      subTitle: "Mileage"),
+                  FeatureWidget(
+                      title: "91%",
+                      icon: Icons.electric_bolt,
+                      subTitle: "Battery")
+                ],
+              ),
+
+              Spacer(),
+            ],
           ),
         ),
-       child:  Padding(
-         padding:  const EdgeInsets.all(20),
-         child: Column(
-           children: [
-             const TextUtil(text: "Hello Dev_73arner!",size: 22,weight: true,),
-             const  SizedBox(height: 20,),
-             const   TextUtil(text: "8 Series Gran Coupe"),
-             const  Spacer(),
-             Row(
-               children: [
-
-               ],
-             )
-           ],
-         ),
-       ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: InkWell(
+        onTap: (){
+          //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ChargingScreen()));
+        },
+        child: Hero(
+          tag: "Start",
+          child: Container(
+            height: 70,
+            width: 70,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color:Colors.black,
+                border: Border.all(color: Colors.white),
+                boxShadow: [
+                  BoxShadow(
+                      color:Colors.white.withOpacity(0.3),
+                      offset: const Offset(5,5),
+                      blurRadius: 10
+                  ),
+                  BoxShadow(
+                      color: Colors.white.withOpacity(0.3),
+                      offset: const Offset(-3,-3),
+                      blurRadius: 10
+                  )
+                ]
+            ),
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextUtil(text: "Engine".toUpperCase(),color: Colors.grey,size: 10,),
+                TextUtil(text: "Start".toUpperCase(),size: 14,weight: true,)
+              ],
+            )
+          ),
+        ),
       ),
     );
   }
