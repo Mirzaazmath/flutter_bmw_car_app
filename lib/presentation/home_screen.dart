@@ -1,5 +1,7 @@
+import 'package:bmw_car/presentation/start_screen.dart';
 import 'package:bmw_car/utils/text_utlis.dart';
 import 'package:bmw_car/widgets/featutre_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -31,15 +33,20 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
 
-              TextUtil(
-                text: "Hello Dev_73arner!",
-                size: 22,
-                weight: true,
+              Hero(
+                tag: "Hello",
+                child: TextUtil(
+                  text: "Hello Dev_73arner!",
+                  size: 22,
+                  weight: true,
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              TextUtil(text: "8 Series Gran Coupe"),
+              Hero(
+                  tag: "Model",
+                  child: TextUtil(text: "8 Series Gran Coupe")),
               Spacer(),
               Spacer(),
               Spacer(),
@@ -69,13 +76,13 @@ class HomeScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: InkWell(
         onTap: (){
-          //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ChargingScreen()));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const StartScreen()));
         },
         child: Hero(
           tag: "Start",
           child: Container(
-            height: 70,
-            width: 70,
+            height: 80,
+            width: 80,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color:Colors.black,
@@ -94,12 +101,21 @@ class HomeScreen extends StatelessWidget {
                 ]
             ),
             alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextUtil(text: "Engine".toUpperCase(),color: Colors.grey,size: 10,),
-                TextUtil(text: "Start".toUpperCase(),size: 14,weight: true,)
-              ],
+            child: Container(
+              height: 65,
+              width: 65,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color:Colors.black,
+                border: Border.all(color: Colors.grey),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextUtil(text: "Engine".toUpperCase(),color: Colors.grey,size: 10,),
+                  TextUtil(text: "Start".toUpperCase(),size: 14,weight: true,)
+                ],
+              ),
             )
           ),
         ),
