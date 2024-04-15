@@ -1,3 +1,4 @@
+import 'package:bmw_car/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 void main() async{
@@ -5,7 +6,7 @@ void main() async{
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: HomeScreen(),
 
     );
   }
