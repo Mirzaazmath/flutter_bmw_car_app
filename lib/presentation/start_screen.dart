@@ -58,7 +58,7 @@ class StartScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: InkWell(
         onTap: (){
-          //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ChargingScreen()));
+         Navigator.pop(context);
         },
         child: Hero(
           tag: "Start",

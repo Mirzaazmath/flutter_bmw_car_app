@@ -1,7 +1,7 @@
 import 'package:bmw_car/presentation/start_screen.dart';
 import 'package:bmw_car/utils/text_utlis.dart';
 import 'package:bmw_car/widgets/featutre_widget.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,10 +15,16 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         surfaceTintColor: Colors.transparent,
         leading: const Icon(Icons.sort),
-        title: SizedBox(
-          height: 70,
-          width: 70,
-          child: Image.asset("assets/logo.webp"),
+        title: Hero(
+          tag: "logo",
+          child: Material(
+            type: MaterialType.transparency,
+            child: SizedBox(
+              height: 70,
+              width: 70,
+              child: Image.asset("assets/logo.webp"),
+            ),
+          ),
         ),
       ),
       body: Container(
@@ -35,10 +41,13 @@ class HomeScreen extends StatelessWidget {
 
               Hero(
                 tag: "Hello",
-                child: TextUtil(
-                  text: "Hello Dev_73arner!",
-                  size: 22,
-                  weight: true,
+                child: Material(
+                  type: MaterialType.transparency,
+                  child: TextUtil(
+                    text: "Hello Dev_73arner!",
+                    size: 22,
+                    weight: true,
+                  ),
                 ),
               ),
               SizedBox(
@@ -46,7 +55,9 @@ class HomeScreen extends StatelessWidget {
               ),
               Hero(
                   tag: "Model",
-                  child: TextUtil(text: "8 Series Gran Coupe")),
+                  child: Material(
+                      type: MaterialType.transparency,
+                      child: TextUtil(text: "8 Series Gran Coupe"))),
               Spacer(),
               Spacer(),
               Spacer(),
@@ -80,43 +91,46 @@ class HomeScreen extends StatelessWidget {
         },
         child: Hero(
           tag: "Start",
-          child: Container(
-            height: 80,
-            width: 80,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color:Colors.black,
-                border: Border.all(color: Colors.white),
-                boxShadow: [
-                  BoxShadow(
-                      color:Colors.white.withOpacity(0.3),
-                      offset: const Offset(5,5),
-                      blurRadius: 10
-                  ),
-                  BoxShadow(
-                      color: Colors.white.withOpacity(0.3),
-                      offset: const Offset(-3,-3),
-                      blurRadius: 10
-                  )
-                ]
-            ),
-            alignment: Alignment.center,
+          child: Material(
+              type: MaterialType.transparency,
             child: Container(
-              height: 65,
-              width: 65,
+              height: 80,
+              width: 80,
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color:Colors.black,
-                border: Border.all(color: Colors.grey),
+                  shape: BoxShape.circle,
+                  color:Colors.black,
+                  border: Border.all(color: Colors.white),
+                  boxShadow: [
+                    BoxShadow(
+                        color:Colors.white.withOpacity(0.3),
+                        offset: const Offset(5,5),
+                        blurRadius: 10
+                    ),
+                    BoxShadow(
+                        color: Colors.white.withOpacity(0.3),
+                        offset: const Offset(-3,-3),
+                        blurRadius: 10
+                    )
+                  ]
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextUtil(text: "Engine".toUpperCase(),color: Colors.grey,size: 10,),
-                  TextUtil(text: "Start".toUpperCase(),size: 14,weight: true,)
-                ],
-              ),
-            )
+              alignment: Alignment.center,
+              child: Container(
+                height: 65,
+                width: 65,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color:Colors.black,
+                  border: Border.all(color: Colors.grey),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TextUtil(text: "Engine".toUpperCase(),color: Colors.grey,size: 10,),
+                    TextUtil(text: "Start".toUpperCase(),size: 14,weight: true,)
+                  ],
+                ),
+              )
+            ),
           ),
         ),
       ),
