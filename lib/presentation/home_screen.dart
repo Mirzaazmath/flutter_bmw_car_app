@@ -5,6 +5,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.black,
+        surfaceTintColor: Colors.transparent,
+        leading: const Icon(Icons.sort),
+        title: SizedBox(
+          height: 70,
+          width: 70,
+          child: Image.asset("assets/logo.webp"),
+        ),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
